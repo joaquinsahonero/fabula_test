@@ -8,14 +8,24 @@
   </head>
   <body>
     <a-scene stats>
+      <a-scene cursor="rayOrigin: mouse"></a-scene>
       <a-assets>
         <a-assets-item id="silla" src="assets/silla.glb">
       </a-assets>
+      <a-entity camera look-controls wasd-controls
+
+              position="0 1.6 0">
+            <a-cursor color="#26A9CB"></a-cursor>
+            </a-entity>
       
       <a-entity gltf-model="#silla" position="0 0 -2.5" rotation="0 35 0"></a-entity>
       
-      <a-entity camera="fov: 60" look-controls wasd-controls position="0 1.6 0"> </a-entity>
-      <a-box position="1.5 0.5 -3" color="#4CC3D9"></a-box>
+      
+      <a-box position="1.5 0.5 -3" color="#4CC3D9">
+        animation_click="property: rotation;
+          from: 0 0 0; to: 0 360 0;
+          dur: 1000; startEvents: click">
+      </a-box>
 
       <a-plane rotation ="-90 0 0" width="10" height="10" color="#78C8A4"></a-plane>
       
