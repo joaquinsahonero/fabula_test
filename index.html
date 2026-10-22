@@ -8,6 +8,11 @@
   </head>
   <body>
     <a-scene stats>
+      <a-entity camera look-controls wasd-controls
+
+              position="0 1.6 0">
+            <a-cursor color="#26A9CB"></a-cursor>
+            </a-entity>
       <a-scene cursor="rayOrigin: mouse"></a-scene>
       <a-assets>
         <a-assets-item id="silla" src="assets/silla.glb">
@@ -25,11 +30,7 @@
       </a-assets>
 
 
-      <a-entity camera look-controls wasd-controls
-
-              position="0 1.6 0">
-            <a-cursor color="#26A9CB"></a-cursor>
-            </a-entity>
+      
       
       <a-entity gltf-model="#silla" position="0 0 -2.5" rotation="0 35 0"></a-entity>
       
