@@ -15,7 +15,8 @@
             </a-entity>
       
       <a-assets>
-        <a-assets-item id="silla" src="assets/silla.glb">
+        <a-asset-item id="silla" src="assets/silla.glb"></a-asset-item>
+        <a-entity gltf-model="#silla" position="1 0 -2.5" rotation="0 35 0"
           animation_enter="property: scale; to: 1.2 1.2 1.2;
                   dur: 200; startEvents: mouseenter"
           animation_leave="property: scale; to: 1 1 1
@@ -23,11 +24,12 @@
 
                   animation_click="property: rotation;
           from: 0 0 0; to: 0 360 0;
-          dur: 1000; startEvents: click">
+          dur: 1000; startEvents: click"></a-entity>
+          
           
           <a-text value="Toca la Silla" position="-2 2 -4"
           align="center" width="4" color="222D62"></a-text>
-      </a-assets>
+      
 
 
       
