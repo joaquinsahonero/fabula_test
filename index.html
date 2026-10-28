@@ -7,57 +7,38 @@
     <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene cursor="rayOrigin: mouse">
-      <a-entity camera look-controls wasd-controls
+    <a-scene cursor="rayOrigin: mouse" raycaster="objects: .clickable">
 
-              position="0 1.6 0">
-            <a-cursor color="#26A9CB"></a-cursor>
-            </a-entity>
-      
       <a-assets>
         <a-asset-item id="silla" src="assets/silla.glb"></a-asset-item>
-        <a-entity gltf-model="#silla" position="1 0 -2.5" rotation="0 35 0"
-          animation_enter="property: scale; to: 1.2 1.2 1.2;
-                  dur: 200; startEvents: mouseenter"
-          animation_leave="property: scale; to: 1 1 1
-                  dur 200 startEvents: mouseleave"
+      </a-assets>
 
-                  animation_click="property: rotation;
-          from: 0 0 0; to: 0 360 0;
-          dur: 1000; startEvents: click"></a-entity>
+      <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+
+      <a-entity class="clickable" gltf-model="silla"
+        position="-1.5 0 -3" rotation="0 35 0"
+        animation__enter="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents:mouseenter"
+        animation__leave="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+        animation__click="property: rotation; from: 0 35 0; to: 0 395 0; dur: 1000; startEvents: click"
+        ></a-entity>
+        <a-text value="Toca la silla" position="-1.5 2 -3"
+        align="center" width="4" color="#FFFFF"></a-text>
+
+        <a-box class="clickable" position="1.5 0.5 -3" color="#4CC3D9"
+          animation__enter="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+          animation__leave="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+          animation__click="property: rotation; from: 0 0 0; to: 0 360 0; dur: 1000; startEvents:click"
+          ></a-box>
+          <a-text value="Toca la caja" position="1.5 1.7 -3"
+          align="center" width="4" color="FFFFF"></a-text>
+
+          <a-plane rotation="-90 0 0" width="10" height="10" color="#78C8A4"></a-plane>
+          <a-sky color="#222D62"></a-sky>
+
+          <a-entity light="type: ambient; intensity: 0.6"></a-entity>
+          <a-entity light="type: directional; intensity: 0.8" position="-1 2 1"></a-entity>
+
           
-          
-          <a-text value="Toca la Silla" position="-2 2 -4"
-          align="center" width="4" color="222D62"></a-text>
-      
-
-
-      
-      
-      <a-entity gltf-model="#silla" position="0 0 -2.5" rotation="0 35 0"></a-entity>
-      
-      
-      <a-box position="1.5 0.5 -3" color="#4CC3D9">
-
-        animation_enter="property: scale; to: 1.2 1.2 1.2;
-                  dur: 200; startEvents: mouseenter"
-          animation_leave="property: scale; to: 1 1 1
-                  dur 200 startEvents: mouseleave"
-
-        animation_click="property: rotation;
-          from: 0 0 0; to: 0 360 0;
-          dur: 1000; startEvents: click">
-
-          <a-text value="Toca la caja" position="-2 2 -4"
-          align="center" width="4" color="222D62"></a-text>
-      </a-box>
-
-      <a-plane rotation ="-90 0 0" width="10" height="10" color="#78C8A4"></a-plane>
-      
-      <a-sky color="#222D62"></a-sky>
-      <a-entity light="type: ambient; intesity: 0.6"></a-entity>
-      <a-entity light="type directional; intensity: 0.8 position= 0.8"></a-entity>
-      
     </a-scene>
   </body>
 </html>
